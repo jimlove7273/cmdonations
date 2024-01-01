@@ -1,4 +1,4 @@
-import DonationPage from '@/components/Donations/DonationPage';
+import { DonationPage } from '@/components/Donations/DonationPage';
 
 export default function Home() {
   return (

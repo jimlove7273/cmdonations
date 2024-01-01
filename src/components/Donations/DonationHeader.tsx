@@ -1,4 +1,10 @@
-const DonationHeader = () => {
+import { DonationsType } from '@/types/donationsType';
+
+const DonationHeader = ({ donations }: { donations: DonationsType[] }) => {
+  let totalAmount =
+    donations.length > 0
+      ? donations.reduce((sum, donation) => sum + donation.Amount, 0)
+      : 0;
   return (
     <div className="bg-[#e5f7e9] p-5 pb-0">
       <div className="flex justify-between mb-9">
@@ -13,14 +19,16 @@ const DonationHeader = () => {
               Total Amount
             </div>
             <div className="text-[#739e47] text-xl font-semibold">
-              $8,400.00
+              {totalAmount}
             </div>
           </div>
           <div className="flex flex-col items-end">
             <div className="font-roboto text-[11px] text-[#bbb]">
               Transactions
             </div>
-            <div className="text-zinc-900 text-xl font-semibold">4</div>
+            <div className="text-zinc-900 text-xl font-semibold">
+              {donations.length}
+            </div>
           </div>
         </div>
       </div>

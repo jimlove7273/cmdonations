@@ -27,7 +27,7 @@ table tr {
   border-bottom: 1px dotted #ccc;
 }
 
-table tr:first-child td {
+table thead td {
   font-weight: 600;
 }
 
