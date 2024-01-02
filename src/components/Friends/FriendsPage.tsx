@@ -1,6 +1,6 @@
 import FriendsHeader from './FriendsHeader';
 import FriendList from './FriendList';
-import { FriendsAll } from '@/utils/db/friends';
+import { FriendsAll } from '../../utils/db/friends';
 
 export async function FriendsPage() {
   const friends = await FriendsAll();
