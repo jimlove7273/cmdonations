@@ -1,10 +1,10 @@
-import prisma from '../../../prisma/prisma';
 import DonationHeader from './DonationHeader';
 import DonationList from './DonationList';
 import FilterRow from './Filter';
+import { DonationAll } from '@/utils/db/Donations';
 
 export async function DonationPage() {
-  const donations = await prisma.donations.findMany();
+  const donations = await DonationAll();
   return (
     <div className="flex flex-col w-full">
       <DonationHeader donations={donations} />

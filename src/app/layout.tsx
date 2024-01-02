@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="w-full max-w-[1200px] mx-auto mt-9">
+        <div className="w-full max-w-[1250px] mx-auto mt-9">
           <div className="flex">
             <LeftNav />
             {children}

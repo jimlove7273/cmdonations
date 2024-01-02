@@ -27,10 +27,25 @@ table tr {
   border-bottom: 1px dotted #ccc;
 }
 
+table tbody tr:hover {
+  background-color: #eee;
+}
+
 table thead td {
   font-weight: 600;
+  font-size: 14px;
 }
 
 table td {
   padding: 4px 0;
+  font-size: 13px;
+}
+
+table td:first-child {
+  padding-left: 10px;
+}
+
+table td:last-child {
+  text-align: right;
+  padding-right: 10px;
 }

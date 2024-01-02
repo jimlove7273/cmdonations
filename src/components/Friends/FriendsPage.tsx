@@ -1,11 +1,9 @@
-import prisma from '../../../prisma/prisma';
 import FriendsHeader from './FriendsHeader';
 import FriendList from './FriendList';
-// import FilterRow from './Filter';
+import { FriendsAll } from '@/utils/db/friends';
 
 export async function FriendsPage() {
-  const friends = await prisma.friends.findMany();
-  console.log(typeof friends, friends);
+  const friends = await FriendsAll();
   return (
     <div className="flex flex-col w-full">
       <FriendsHeader friends={friends} />
