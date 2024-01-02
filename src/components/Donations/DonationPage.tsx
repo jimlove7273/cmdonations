@@ -1,4 +1,4 @@
-import { DonationAll } from '../../utils/db/donations';
+import { DonationAll } from '@/utils/db/donationsDB';
 import DonationHeader from './DonationHeader';
 import DonationList from './DonationList';
 import FilterRow from './Filter';
