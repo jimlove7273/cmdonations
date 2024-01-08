@@ -19,8 +19,8 @@ const FriendList = ({ friends }: { friends: FriendsType[] }) => {
           </thead>
           <tbody>
             {friends.map((friend: FriendsType) => (
-              <tr key={friend.friendId}>
-                <td>{friend.friendId}</td>
+              <tr key={friend.id}>
+                <td>{friend.id}</td>
                 <td>{friend.firstName}</td>
                 <td>{friend.lastName}</td>
                 <td>{friend.email}</td>
