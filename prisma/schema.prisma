@@ -12,7 +12,7 @@ datasource db {
 
 model Friends {
   id          String      @id @default(cuid())
-  // friendId    Int
+  friendId    Int
   firstName   String
   lastName    String
   chineseName String?
@@ -29,7 +29,7 @@ model Friends {
 }
 
 model Donations {
-  id           String   @id @default(cuid())
+  id           Int      @id
   donationDate DateTime
   Type         String
   Check        String?
