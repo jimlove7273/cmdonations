@@ -1,16 +1,22 @@
 import { FriendsType } from '@/types/friendsType';
 import prisma from '../../../prisma/prisma';
+import axios from 'axios';
 
 /**
- * FriendsAll: Get ALL Friends
+ *
+ * getFriends - this "gets" all friends from the API/Database
  * @returns
+ *
  */
-export async function FriendsAll() {
-  return await prisma.friends.findMany();
+export async function getFriends() {
+  const res = await axios.get('/api/friends');
+  return res.data;
 }
 
 /**
+ *
  * AddNewFriend: Add a New Friend
+ *
  */
 export async function AddFriendFunction(friend: FriendsType) {
   try {
@@ -35,8 +41,9 @@ export async function AddFriendFunction(friend: FriendsType) {
     // Handle the error, log it, or perform any necessary actions
     console.error('Error adding friend:', error.message);
     throw error; // Rethrow the error to propagate it to the calling code
-  } finally {
-    // Close the Prisma client connection in the finally block
-    await prisma.$disconnect();
   }
+  // finally {
+  //   // Close the Prisma client connection in the finally block
+  //   await prisma.$disconnect();
+  // }
 }

@@ -7,6 +7,8 @@ const FriendList = ({ friends }: { friends: FriendsType[] }) => {
         <table className="w-full">
           <thead>
             <tr>
+              <td></td>
+              <td></td>
               <td>Rec</td>
               <td>First Name</td>
               <td>Last Name</td>
@@ -20,6 +22,8 @@ const FriendList = ({ friends }: { friends: FriendsType[] }) => {
           <tbody>
             {friends.map((friend: FriendsType) => (
               <tr key={friend.id}>
+                <td></td>
+                <td></td>
                 <td>{friend.id}</td>
                 <td>{friend.firstName}</td>
                 <td>{friend.lastName}</td>

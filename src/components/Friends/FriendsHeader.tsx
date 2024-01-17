@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { FriendsType } from '@/types/friendsType';
 import AddFriend from './AddFriend';

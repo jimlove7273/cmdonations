@@ -30,6 +30,7 @@ const AddFriend = ({
             name="last_name"
             className="w-full p-2 border border-gray-200"
             placeholder="Last Name"
+            required
           />
         </div>
         <div className="flex w-full gap-2 mb-2">
@@ -44,6 +45,7 @@ const AddFriend = ({
             name="email"
             className="w-full p-2 border border-gray-200"
             placeholder="email"
+            required
           />
         </div>
         <div className="flex w-full gap-2 mb-2">
@@ -85,9 +87,11 @@ const AddFriend = ({
           className="mt-5 flex justify-end border-t border-slate-200"
           onClick={addFriendAction}
         >
-          <div className="mt-4 px-4 py-2 bg-green-600 rounded-lg text-gray-50 cursor-pointer">
-            Save Changes
-          </div>
+          <input
+            type="submit"
+            value="Save Changes"
+            className="mt-4 px-4 py-2 bg-green-600 rounded-lg text-gray-50 cursor-pointer"
+          />
         </div>
       </div>
     </div>

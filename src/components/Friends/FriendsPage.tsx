@@ -1,26 +1,28 @@
 'use client';
-import axios from 'axios';
-
 import FriendsHeader from './FriendsHeader';
 import FriendList from './FriendList';
-// import { FriendsAll } from '@/utils/db/friendsDB';
+import { getFriends } from '@/utils/db/friendsDB';
 
-const getFriends = async () => {
-  try {
-    const resonse = await axios.get('http://localhost:3001/api/friends');
-    return resonse.data;
-  } catch (error: any) {
-    console.error('Error fetching data:', error.message);
-    throw error;
-  }
-};
+import { useQuery } from '@tanstack/react-query';
 
-export async function FriendsPage() {
-  const friends = await getFriends();
+export function FriendsPage() {
+  const {
+    error,
+    isLoading,
+    data: friends,
+  } = useQuery({
+    queryKey: ['friends'],
+    queryFn: getFriends,
+  });
+
+  isLoading && <>Loading...</>;
+  error && <>Error</>;
+  console.log('data', friends, error, isLoading);
+
   return (
     <div className="flex flex-col w-full">
-      <FriendsHeader friends={friends} />
-      <FriendList friends={friends} />
+      <FriendsHeader friends={friends?.length ? friends : []} />
+      <FriendList friends={friends?.length ? friends : []} />
     </div>
   );
 }

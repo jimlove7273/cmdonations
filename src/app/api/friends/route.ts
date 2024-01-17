@@ -6,8 +6,15 @@ import { NextRequest, NextResponse } from 'next/server';
  * @returns
  */
 export async function GET() {
-  const friends = await prisma.friends.findMany();
-  return NextResponse.json(friends);
+  try {
+    const friends = await prisma.friends.findMany();
+    return NextResponse.json(friends, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: 'Could Not Fetch Friends' },
+      { status: 500 },
+    );
+  }
 }
 
 /**
