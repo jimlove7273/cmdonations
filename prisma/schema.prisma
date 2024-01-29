@@ -11,8 +11,8 @@ datasource db {
 }
 
 model Friends {
-  id          String      @id @default(cuid())
-  friendId    Int
+  id          Int         @id @default(autoincrement())
+  friendId    Int?
   firstName   String
   lastName    String
   chineseName String?
@@ -29,7 +29,7 @@ model Friends {
 }
 
 model Donations {
-  id           Int      @id
+  id           Int      @id @default(autoincrement())
   donationDate DateTime
   Type         String
   Check        String?
@@ -37,5 +37,5 @@ model Donations {
   For          String?
   Notes        String?
   Friends      Friends? @relation(fields: [friendsId], references: [id])
-  friendsId    String?
+  friendsId    Int?
 }

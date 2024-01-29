@@ -4,12 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
   font-family: Inter;
 }
 
-.font-roboto { font-family: Roboto; }
-.font-oswald { font-family: Oswald; }
+.font-roboto {
+  font-family: Roboto;
+}
+.font-oswald {
+  font-family: Oswald;
+}
 
 /* --- Stop Showing Hydration Warning */
 nextjs-portal {
@@ -48,4 +53,15 @@ table td:first-child {
 table td:last-child {
   text-align: right;
   padding-right: 10px;
+}
+
+/* -----------------------------------
+  input fields
+  ----------------------------------- */
+.formInput {
+  border: 1px solid #e0e0e0;
+  padding: 3px;
+  width: 100%;
+  margin-bottom: 4px;
+  border-radius: 5px;
 }

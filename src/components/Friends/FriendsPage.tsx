@@ -1,23 +1,13 @@
-'use client';
 import FriendsHeader from './FriendsHeader';
 import FriendList from './FriendList';
-import { getFriends } from '@/utils/db/friendsDB';
+import prisma from '../../../prisma/prisma';
 
-import { useQuery } from '@tanstack/react-query';
+export async function getPrismaFriends() {
+  return await prisma.friends.findMany();
+}
 
-export function FriendsPage() {
-  const {
-    error,
-    isLoading,
-    data: friends,
-  } = useQuery({
-    queryKey: ['friends'],
-    queryFn: getFriends,
-  });
-
-  isLoading && <>Loading...</>;
-  error && <>Error</>;
-  console.log('data', friends, error, isLoading);
+export async function FriendsPage() {
+  let friends = await getPrismaFriends();
 
   return (
     <div className="flex flex-col w-full">

@@ -20,7 +20,7 @@ export async function GET() {
 /**
  * AddNewFriend: Add a New Friend
  */
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
   try {
     const response = await req.json();
     console.log('POST friend', response);
@@ -40,10 +40,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
         DNS: false,
       },
     });
-    return Response.json(result);
+    return NextResponse.json(result, { status: 200 });
   } catch (error: any) {
     // Handle the error, log it, or perform any necessary actions
-    console.error('Error adding friend:', error.message);
+    console.error('Error adding friend:' + error, { status: 500 });
     throw error; // Rethrow the error to propagate it to the calling code
   } finally {
     // Close the Prisma client connection in the finally block

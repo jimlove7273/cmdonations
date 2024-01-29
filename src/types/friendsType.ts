@@ -11,6 +11,6 @@ export type FriendsType = {
   country: string | null;
   phone: string | null;
   email: string;
-  DNS: boolean;
+  DNS: boolean | null;
   Notes: string | null;
 };
