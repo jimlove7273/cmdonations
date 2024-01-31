@@ -12,7 +12,7 @@ datasource db {
 
 model Friends {
   id          Int         @id @default(autoincrement())
-  friendId    Int?
+  friendId    Int
   firstName   String
   lastName    String
   chineseName String?

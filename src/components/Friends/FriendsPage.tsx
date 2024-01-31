@@ -11,8 +11,8 @@ export async function FriendsPage() {
 
   return (
     <div className="flex flex-col w-full">
-      <FriendsHeader friends={friends?.length ? friends : []} />
-      <FriendList friends={friends?.length ? friends : []} />
+      <FriendsHeader friends={friends} />
+      <FriendList friends={friends} />
     </div>
   );
 }
