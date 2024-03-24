@@ -10,7 +10,7 @@ export async function FriendsPage() {
   let friends = await getPrismaFriends();
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="w-full h-full">
       <FriendsHeader friends={friends} />
       <FriendList friends={friends} />
     </div>

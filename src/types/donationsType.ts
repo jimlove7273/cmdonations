@@ -6,4 +6,5 @@ export type DonationsType = {
   Amount: number;
   For?: string | null;
   Notes?: string | null;
+  friendsId?: number | null;
 };

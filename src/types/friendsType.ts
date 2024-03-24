@@ -13,4 +13,4 @@ export type FriendsType = {
   email: string;
   DNS: boolean | null;
   Notes: string | null;
-};
+} | null;

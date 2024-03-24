@@ -6,6 +6,7 @@ import './globals.css';
  */
 import LeftNav from '@/components/LeftNav';
 import { Provider } from '@/utils/Provider';
+import LogoBar from '@/components/Friends/LogoBar';
 
 export const metadata: Metadata = {
   title: 'Clay Music Donations',
@@ -21,7 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Provider>
-          <div className="w-full max-w-[1250px] mx-auto mt-9">
+          <LogoBar />
+          <div className="w-full">
             <div className="flex">
               <LeftNav />
               {children}
