@@ -43,8 +43,11 @@ const AddFriend = ({
       <div className="z-10 m-2 p-5 w-full md:w-2/3 rounded-lg inline-block bg-white">
         <form onSubmit={handleSubmit(submit)}>
           <div className="flex justify-between mb-6">
-            <div className="text-xl font-bold">Add a Friend</div>
-            <div onClick={() => setAddFriendDialog(false)}>
+            <div className="text-xl font-semibold">Add a Friend</div>
+            <div
+              className="cursor-pointer"
+              onClick={() => setAddFriendDialog(false)}
+            >
               <GrClose />
             </div>
           </div>
