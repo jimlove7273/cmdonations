@@ -30,7 +30,11 @@ table {
   padding: 10px;
 }
 
-table tr {
+table thead tr {
+  border-bottom: 2px double #ccc;
+}
+
+table tbody tr {
   border-bottom: 1px dotted #ccc;
 }
 

@@ -28,10 +28,17 @@ const FriendList = ({ friends }: { friends: FriendsType[] }) => {
             {friends.map((friend: FriendsType) => (
               <tr key={friend?.id}>
                 <td>
-                  <FaRegEdit />
+                  {/* <FaRegEdit size={18} color="#3d419c" /> */}
+                  <FaRegEdit
+                    size={18}
+                    className="text-[#b4b6db] hover:text-[#3d419c]"
+                  />
                 </td>
                 <td>
-                  <RiDeleteBin5Line />
+                  <RiDeleteBin5Line
+                    size={18}
+                    className="text-[#d1938e] hover:text-[#e33327]"
+                  />
                 </td>
                 <td>{friend?.id}</td>
                 <td>{friend?.firstName}</td>

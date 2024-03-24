@@ -17,9 +17,11 @@ const FriendsHeader = ({ friends }: { friends: FriendsType[] }) => {
         <div className="bg-white flex justify-between gap-4 items-center p-5 shadow-[0px_6px_23px_10px_#00000024]">
           <div>
             <div className="font-bold">List of Friends</div>
+          </div>
+          <div>
             <div
               onClick={() => setAddFriendDialog(true)}
-              className="text-[10px] uppercase inline-block rounded-md px-3 py-1 bg-blue-700 text-gray-200 cursor-pointer"
+              className="text-sm font-semibold inline-block rounded-md px-3 py-1 cursor-pointer hover:bg-slate-300 hover:border-b"
             >
               Add
             </div>

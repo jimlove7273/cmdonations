@@ -77,7 +77,7 @@ const AddFriend = ({
             />
             <input
               type="text"
-              {...register('email')}
+              {...register('email', { required: true })}
               className="w-full p-2 border border-gray-200"
               placeholder="email"
             />
@@ -120,9 +120,18 @@ const AddFriend = ({
               </select>
             </div>
           </div>
-          <div className="mt-5 flex justify-end border-t border-slate-200">
-            <button className="mt-4 px-4 py-2 bg-blue-600 rounded-lg text-gray-50 cursor-pointer">
-              Save Changes
+          <div className="mt-5 flex justify-end gap-3 border-t border-slate-200">
+            <button
+              className="mt-4 px-4 py-2 bg-zinc-300 rounded-lg text-zinc-800 cursor-pointer"
+              onClick={() => setAddFriendDialog(false)}
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="mt-4 px-4 py-2 bg-blue-600 rounded-lg text-gray-50 cursor-pointer"
+            >
+              Add Friend
             </button>
           </div>
         </form>

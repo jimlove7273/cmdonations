@@ -16,16 +16,16 @@ const LeftNav = () => {
           pathname.includes('friends') ? 'bg-[#38569c]' : ''
         }`}
       >
-        <FaPerson color="#3072db" size={18} /> Friends
+        <FaPerson color="#a3c0f0" size={18} /> Friends
       </Link>
       <Link
         href="/donations"
         className="flex gap-3 pl-3 p-2 text-sm hover:bg-[#38569c]"
       >
-        <FaDonate color="#1bab33" size={18} /> Donations
+        <FaDonate color="#b6debd" size={18} /> Donations
       </Link>
       <Link href="/" className="flex gap-3 pl-3 p-2 text-sm hover:bg-[#38569c]">
-        <TbReport color="#6632a8" size={18} /> Receipts
+        <TbReport color="#c4ace3" size={18} /> Receipts
       </Link>
     </div>
   );

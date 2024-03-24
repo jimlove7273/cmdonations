@@ -1,6 +1,7 @@
 import { DonationsType } from '@/types/donationsType';
 import { FriendsType } from '@/types/friendsType';
 import prisma from '../../../prisma/prisma';
+import { formatCurrency } from '@/utils/general';
 
 const DonationList = ({
   friend,
@@ -40,15 +41,19 @@ const DonationList = ({
             console.log('friendData', friend, donation.friendsId);
             return (
               <tr key={donation.id}>
-                <td>{donation?.donationDate.toLocaleDateString()}</td>
+                <td>
+                  {donation?.donationDate.toLocaleDateString('en-US', {
+                    timeZone: 'UTC',
+                  })}
+                </td>
                 <td>
                   {friend?.firstName} {friend?.lastName}
                 </td>
                 <td>{friend?.email}</td>
                 <td>{friend?.address}</td>
                 <td>{donation.Type}</td>
-                <td>{donation.Check}</td>
-                <td>${donation.Amount}</td>
+                <td>{donation.Check || '-'}</td>
+                <td>{formatCurrency(donation.Amount)}</td>
               </tr>
             );
           })}
